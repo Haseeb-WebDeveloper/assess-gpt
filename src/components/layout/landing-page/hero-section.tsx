@@ -13,7 +13,7 @@ const HeroSection = () => {
 
     tl.from(".hero-element", {
       opacity: 0,
-      y: 100,
+      y: 50,
       duration: 0.8,
       stagger: 0.2,
       ease: "power3.out",
@@ -24,10 +24,11 @@ const HeroSection = () => {
         trigger: ".stats-container",
         start: "top center+=100",
       },
-      y: 50,
+      y: 30,
       opacity: 0,
       duration: 0.8,
       stagger: 0.2,
+      ease: "power3.out",
     });
   });
 
@@ -35,20 +36,20 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center py-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-background" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_100%)]" />
 
       {/* Animated Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]" />
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
-            className="hero-element space-y-4 mb-8"
+            className="hero-element space-y-6 mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <span className="inline-block text-sm md:text-base text-primary/80 font-medium px-4 py-2 bg-primary/5 rounded-full mb-4">
+            <span className="inline-block text-sm md:text-base text-primary/80 font-medium px-4 py-2 bg-primary/10 rounded-full mb-4 hover:bg-primary/20 transition-colors">
               Revolutionizing Education Assessment
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary via-blue-600 to-indigo-600 bg-clip-text text-transparent leading-tight">
@@ -64,25 +65,34 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
           >
             Streamline your grading process with intelligent AI assistance.
-            Perfect for teachers and institutions looking to modernize
-            education.
+            Perfect for teachers and institutions looking to modernize education.
           </motion.p>
 
           <motion.div
-            className="hero-element flex flex-col md:flex-row gap-4 justify-center items-center mb-16"
+            className="hero-element flex flex-col md:flex-row gap-4 justify-center items-center mb-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <CustomButton variant="gradient" size="lg" icon={<ArrowRight />}>
+            <CustomButton
+              variant="gradient"
+              size="lg"
+              icon={<ArrowRight />}
+              className="hover:scale-105 transition-transform"
+            >
               Start Free Trial
             </CustomButton>
-            <CustomButton variant="outline" size="lg" icon={<Play size={16} />}>
+            <CustomButton
+              variant="outline"
+              size="lg"
+              icon={<Play size={16} />}
+              className="hover:bg-foreground/5 transition-colors"
+            >
               Watch Demo
             </CustomButton>
           </motion.div>
 
           {/* Stats */}
-          <div className="stats-container grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="stats-container grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
               {
                 value: "10K+",
@@ -98,7 +108,7 @@ const HeroSection = () => {
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                className="stat-item p-6 rounded-2xl bg-foreground/5 backdrop-blur-sm"
+                className="stat-item p-6 rounded-2xl bg-foreground/5 backdrop-blur-sm border border-foreground/10 hover:border-foreground/20 transition-all"
                 whileHover={{ y: -5, scale: 1.02 }}
               >
                 <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent mb-2">
