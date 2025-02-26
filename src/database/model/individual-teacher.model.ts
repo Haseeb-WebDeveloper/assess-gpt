@@ -157,7 +157,7 @@ const TeacherSchema = new Schema<IndividualTeacherInterface>({
 });
 
 // Ensure indexes are created
-TeacherSchema.index({ email: 1 }, { unique: true });
+// TeacherSchema.index({ email: 1 }, { unique: true });
 TeacherSchema.index({ isVerified: 1, isDeleted: 1 });
 
 // Export the model

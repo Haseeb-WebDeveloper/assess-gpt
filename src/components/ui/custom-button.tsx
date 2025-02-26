@@ -5,10 +5,11 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "text" | "gradient";
-  size?: "sm" | "md" | "lg";
+  variant?: "primary" | "secondary" | "outline" | "text" | "gradient" | "ghost";
+  size?: "sm" | "md" | "lg" | "xl";
   isLoading?: boolean;
   icon?: React.ReactNode;
+  fullWidth?: boolean;
 }
 
 const CustomButton = React.forwardRef<HTMLButtonElement, CustomButtonProps>(
@@ -20,6 +21,7 @@ const CustomButton = React.forwardRef<HTMLButtonElement, CustomButtonProps>(
       size = "md",
       isLoading = false,
       icon,
+      fullWidth = false,
       ...props
     },
     ref
@@ -31,13 +33,15 @@ const CustomButton = React.forwardRef<HTMLButtonElement, CustomButtonProps>(
       secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
       outline: "border-2 border-primary/20 bg-transparent hover:border-primary/40 hover:bg-primary/5",
       text: "bg-transparent hover:bg-primary/5",
-      gradient: "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-indigo-600/20"
+      gradient: "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-indigo-600/20",
+      ghost: "bg-transparent hover:bg-primary/5"
     };
 
     const sizes = {
       sm: "h-9 px-4 text-sm",
       md: "h-11 px-6 text-base",
-      lg: "h-12 px-8 text-lg"
+      lg: "h-12 px-8 text-lg",
+      xl: "h-14 px-10 text-xl"
     };
 
     const loadingVariants = {
@@ -55,6 +59,7 @@ const CustomButton = React.forwardRef<HTMLButtonElement, CustomButtonProps>(
           baseStyles,
           variants[variant],
           sizes[size],
+          fullWidth && "w-full",
           isLoading && "opacity-80 cursor-not-allowed",
           className
         )}

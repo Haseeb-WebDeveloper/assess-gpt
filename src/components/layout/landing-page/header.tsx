@@ -73,16 +73,20 @@ const Header = () => {
 
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <CustomButton
-              variant="outline"
-              size="sm"
-              icon={<LogIn size={16} />}
+            <Link href="/auth">
+              <CustomButton
+                variant="outline"
+                size="sm"
+                icon={<LogIn size={16} />}
             >
               Log in
             </CustomButton>
+            </Link>
+            <Link href="/auth">
             <CustomButton variant="gradient" size="sm">
               Get Started
             </CustomButton>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -120,16 +124,16 @@ const Header = () => {
                   </Link>
                 ))}
                 <div className="flex flex-col space-y-2 pt-4 border-t border-border/50">
-                  <CustomButton
-                    variant="outline"
-                    size="sm"
-                    icon={<LogIn size={16} />}
-                  >
-                    Log in
-                  </CustomButton>
-                  <CustomButton variant="gradient" size="sm">
-                    Get Started
-                  </CustomButton>
+                  <Link href="/auth/signin">
+                    <CustomButton variant="outline" size="sm">
+                      Log in
+                    </CustomButton>
+                  </Link>
+                  <Link href="/auth/signin">
+                    <CustomButton variant="gradient" size="sm">
+                      Get Started
+                    </CustomButton>
+                  </Link>
                 </div>
               </nav>
             </motion.div>

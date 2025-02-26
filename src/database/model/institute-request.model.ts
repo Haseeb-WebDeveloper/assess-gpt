@@ -10,8 +10,9 @@ interface InstituteRequestInterface {
   location: string;
   phone: string;
   additionalInfo: string;
+  expectedStudents: number;
   status: string;
-  approvedInstituteId: string;
+  approvedInstituteId?: mongoose.Types.ObjectId;
 }
 
 
@@ -38,6 +39,7 @@ const InstituteRequestSchema = new Schema({
   location: String,
   phone: String,
   additionalInfo: String,
+  expectedStudents: Number,
   status: {
     type: String,
     enum: ['pending', 'approved', 'rejected'],
