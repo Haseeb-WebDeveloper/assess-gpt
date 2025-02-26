@@ -1,5 +1,5 @@
 import { connectToDatabase } from "../lib/db.js";
-import PlatformAdmin from "../database/model/platform-admin.model.ts";
+import PlatformAdmin from "../database/model/platform-admin.model";
 import bcrypt from "bcryptjs";
 
 async function createPlatformAdmin() {

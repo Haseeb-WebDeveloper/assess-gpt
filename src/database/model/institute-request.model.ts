@@ -2,7 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 
 
 // Institute Request Model  interface
-interface InstituteRequestInterface {
+export interface InstituteRequestInterface {
   instituteName: string;
   requestedSubdomain: string;
   contactName: string;
@@ -17,7 +17,7 @@ interface InstituteRequestInterface {
 
 
 
-const InstituteRequestSchema = new Schema({
+const InstituteRequestSchema: Schema<InstituteRequestInterface> = new Schema({
   instituteName: {
     type: String,
     required: [true, 'Institute name is required'],

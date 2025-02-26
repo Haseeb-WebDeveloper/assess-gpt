@@ -7,6 +7,7 @@ import { columns } from "./columns";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+
 async function getInstituteRequests() {
   try {
     await connectToDatabase();
@@ -14,7 +15,7 @@ async function getInstituteRequests() {
       .sort({ createdAt: -1 })
       .lean();
 
-    return requests.map(request => ({
+    return requests.map((request: any) => ({
       ...request,
       id: request._id.toString(),
       createdAt: request.createdAt.toISOString(),

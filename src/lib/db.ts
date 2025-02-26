@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
+import mongoose, { Mongoose } from 'mongoose';
 
 declare global {
   var mongoose: {
-    conn: typeof mongoose | null;
-    promise: Promise<typeof mongoose> | null;
+    conn: Mongoose | null;
+    promise: Promise<Mongoose> | null;
   };
 }
 
@@ -31,15 +31,16 @@ export async function connectToDatabase() {
     };
 
     cached.promise = mongoose
-      .connect(MONGODB_URI, opts)
-      .then((mongoose) => {
-        console.log('New database connection established');
-        return mongoose;
-      })
-      .catch((error) => {
-        console.error('Database connection error:', error);
-        throw error;
-      });
+    .connect(MONGODB_URI, opts)
+    .then((mongooseInstance) => {
+      console.log('New database connection established');
+      cached.conn = mongooseInstance;
+      return mongooseInstance;  // Return the mongoose instance
+    })
+    .catch((error) => {
+      console.error('Database connection error:', error);
+      throw error;
+    });
   }
 
   try {
@@ -50,4 +51,4 @@ export async function connectToDatabase() {
   }
 
   return cached.conn;
-} 
+}
