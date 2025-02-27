@@ -19,6 +19,7 @@ const InstituteAdminSchema: Schema<InstituteAdminInterface> = new Schema({
   password: {
     type: String,
     required: true,
+    select: false,
   },
   instituteId: { 
     type: mongoose.Schema.Types.ObjectId,
@@ -37,8 +38,9 @@ const InstituteAdminSchema: Schema<InstituteAdminInterface> = new Schema({
     default: ['all'],
     required: true,
   },
+}, {
+  timestamps: true,
 });
-
 
 export default mongoose.models.InstituteAdmin || mongoose.model<InstituteAdminInterface>('InstituteAdmin', InstituteAdminSchema);
 

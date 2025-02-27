@@ -13,7 +13,8 @@ export default function InstituteAdminLoginForm() {
   const [error, setError] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/institute-admin/dashboard";
+  const callbackUrl =
+    searchParams.get("callbackUrl") || "/institute-admin/dashboard";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,15 +31,17 @@ export default function InstituteAdminLoginForm() {
         password,
         role: "institute_admin",
         redirect: false,
+        callbackUrl,
       });
 
       if (!result?.ok) {
-        throw new Error("Invalid credentials");
+        throw new Error(result?.error || "Invalid credentials");
       }
 
       router.push(callbackUrl);
     } catch (error: any) {
-      setError(error.message);
+      console.error("Login error:", error);
+      setError(error.message || "Failed to sign in");
     } finally {
       setIsLoading(false);
     }
@@ -115,4 +118,4 @@ export default function InstituteAdminLoginForm() {
       </motion.div>
     </div>
   );
-} 
+}
