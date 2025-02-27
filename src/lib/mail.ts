@@ -1,9 +1,9 @@
 import nodemailer from "nodemailer";
-import { EmailTemplate, EmailData } from "@/types/email";
+import { EmailTemplate as EmailTemplateType, EmailData } from "@/types/email";
 
 // Email templates
 const templates: Record<EmailTemplate, (data: any) => string> = {
-  INSTITUTE_REQUEST: (data) => `
+  INSTITUTE_REQUEST: (data: any) => `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
       <h2 style="color: #2563eb;">New Institute Access Request</h2>
       <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -25,7 +25,7 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
     </div>
   `,
   
-  WELCOME_INSTITUTE: (data) => `
+  WELCOME_INSTITUTE: (data: any) => `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
       <h2 style="color: #2563eb;">Thank You for Your Interest!</h2>
       <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -38,6 +38,72 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
           <li>You'll receive an email with access details</li>
         </ol>
         <p>If you have any questions in the meantime, feel free to reach out to our support team.</p>
+      </div>
+      <div style="color: #64748b; font-size: 14px; margin-top: 20px;">
+        <p>Best regards,<br>The AssessGPT Team</p>
+      </div>
+    </div>
+  `,
+
+  INSTITUTE_APPROVED: (data: any) => `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #2563eb;">Welcome to AssessGPT!</h2>
+      <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <p>Your institute account has been approved and is ready to use.</p>
+        
+        <h3>Institute Details</h3>
+        <p><strong>Institute Name:</strong> ${data.instituteName}</p>
+        <p><strong>Your Domain:</strong> <a href="https://${data.subdomain}">${data.subdomain}</a></p>
+        
+        <h3>Admin Account Details</h3>
+        <p><strong>Email:</strong> ${data.adminEmail}</p>
+        <p><strong>Password:</strong> ${data.adminPassword}</p>
+        
+        <p style="margin-top: 20px;">
+          Please save these credentials and change the password after your first login.
+        </p>
+      </div>
+      <div style="color: #64748b; font-size: 14px; margin-top: 20px;">
+        <p>If you have any questions, please contact our support team.</p>
+      </div>
+    </div>
+  `,
+
+  INSTITUTE_ADMIN_CREDENTIALS: (data: any) => `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #2563eb;">Your Admin Account is Ready</h2>
+      <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <p>Dear ${data.name},</p>
+        <p>Your admin account for ${data.instituteName} has been created.</p>
+        
+        <h3>Login Details</h3>
+        <p><strong>Institute URL:</strong> <a href="https://${data.subdomain}">${data.subdomain}</a></p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Password:</strong> ${data.password}</p>
+        
+        <p style="margin-top: 20px; color: #dc2626;">
+          Please change your password after your first login for security.
+        </p>
+      </div>
+      <div style="color: #64748b; font-size: 14px; margin-top: 20px;">
+        <p>Welcome to AssessGPT!</p>
+      </div>
+    </div>
+  `,
+
+  INSTITUTE_REJECTED: (data: any) => `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #2563eb;">Institute Request Update</h2>
+      <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <p>Dear ${data.contactName},</p>
+        <p>Thank you for your interest in AssessGPT. After careful review of your request for ${data.instituteName}, we regret to inform you that we are unable to approve your institute request at this time.</p>
+        
+        <h3>Reason for Rejection</h3>
+        <p>${data.reason}</p>
+        
+        <p style="margin-top: 20px;">
+          If you would like to submit a new request addressing these concerns, please feel free to do so.
+        </p>
       </div>
       <div style="color: #64748b; font-size: 14px; margin-top: 20px;">
         <p>Best regards,<br>The AssessGPT Team</p>
@@ -83,4 +149,12 @@ export async function sendEmail({
     console.error("Email sending failed:", error);
     throw new Error("Failed to send email");
   }
-} 
+}
+
+// Update the EmailTemplate type
+export type EmailTemplate =
+  | "INSTITUTE_REQUEST"
+  | "WELCOME_INSTITUTE"
+  | "INSTITUTE_APPROVED"
+  | "INSTITUTE_ADMIN_CREDENTIALS"
+  | "INSTITUTE_REJECTED"; 

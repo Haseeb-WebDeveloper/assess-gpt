@@ -1,6 +1,8 @@
 export type EmailTemplate = 
   | "INSTITUTE_REQUEST"
-  | "WELCOME_INSTITUTE";
+  | "WELCOME_INSTITUTE"
+  | "INSTITUTE_APPROVED"
+  | "INSTITUTE_ADMIN_CREDENTIALS";
 
 export interface EmailData {
   to: string;

@@ -4,7 +4,6 @@ import { IBaseModel } from '../model/common/base.model';
 export interface IInstitute extends IBaseModel {
   name: string;
   email: string;
-  password: string;
   subdomain: string;
   logo?: string;
   banner?: string;
@@ -51,11 +50,6 @@ const InstituteSchema = new Schema<IInstitute>(
         validator: (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
         message: 'Invalid email address',
       },
-    },
-    password: {
-      type: String,
-      required: true,
-      minlength: [8, 'Password must be at least 8 characters long'],
     },
     subdomain: {
       type: String,
