@@ -47,7 +47,7 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
 
   INSTITUTE_APPROVED: (data: any) => `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #2563eb;">Welcome to AssessGPT!</h2>
+      <h2 style="color: #2563eb;">Welcome to Flextile!</h2>
       <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
         <p>Your institute account has been approved and is ready to use.</p>
         
@@ -58,6 +58,7 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
         <h3>Admin Account Details</h3>
         <p><strong>Email:</strong> ${data.adminEmail}</p>
         <p><strong>Password:</strong> ${data.adminPassword}</p>
+        <p><strong>Login URL:</strong> <a href="https://${data.subdomain}/auth/institute-admin/login">https://${data.subdomain}/auth/institute-admin/login</a></p>
         
         <p style="margin-top: 20px;">
           Please save these credentials and change the password after your first login.
@@ -78,6 +79,7 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
         
         <h3>Login Details</h3>
         <p><strong>Institute URL:</strong> <a href="https://${data.subdomain}">${data.subdomain}</a></p>
+        <p><strong>Login URL:</strong> <a href="https://${data.subdomain}/auth/institute-admin/login">https://${data.subdomain}/auth/institute-admin/login</a></p>
         <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Password:</strong> ${data.password}</p>
         
@@ -86,7 +88,7 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
         </p>
       </div>
       <div style="color: #64748b; font-size: 14px; margin-top: 20px;">
-        <p>Welcome to AssessGPT!</p>
+        <p>Welcome to Flextile!</p>
       </div>
     </div>
   `,

@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flextile - AI-Powered Assessment Platform
 
-## Getting Started
+<div align="center">
+  <img src="public/logo.png" alt="Flextile Logo" width="200"/>
+  <p>Transform education with AI-powered assessment tools</p>
 
-First, run the development server:
+  [![Next.js](https://img.shields.io/badge/Next.js-15.1.7-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+  [![MongoDB](https://img.shields.io/badge/MongoDB-6.0-green?style=flat-square&logo=mongodb)](https://www.mongodb.com/)
+  [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+</div>
 
+## 🌟 Overview
+
+Flextile is a cutting-edge assessment platform that leverages artificial intelligence to revolutionize how educational institutions conduct and manage assessments. Our platform provides a comprehensive suite of tools for creating, administering, and evaluating assessments while ensuring fairness and accuracy.
+
+### 🎯 Key Features
+
+- **AI-Powered Grading**: Automated assessment grading with human-like understanding
+- **Multi-tenant Architecture**: Dedicated subdomains for each institute
+- **Role-based Access Control**: Tailored interfaces for administrators, teachers, and students
+- **Real-time Analytics**: Comprehensive insights into student performance
+- **Customizable Workflows**: Flexible assessment creation and management
+- **Secure Environment**: Enterprise-grade security measures
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.0 or later
+- MongoDB 6.0 or later
+- Bun (recommended) or npm
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/flextile.git
+cd flextile
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+bun install
+# or
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+```bash
+cp .env.example .env
+```
+Edit `.env` with your configuration.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Create a platform admin:
+```bash
+bun run create-admin
+```
 
-## Learn More
+5. Start the development server:
+```bash
+bun run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Visit `http://localhost:3000` to see the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏗️ Architecture
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Tech Stack
 
-## Deploy on Vercel
+- **Frontend**: Next.js 15, TypeScript, Tailwind CSS
+- **Backend**: Next.js API Routes, MongoDB
+- **Authentication**: NextAuth.js
+- **Email**: Nodemailer with custom templates
+- **UI Components**: Radix UI, Framer Motion
+- **State Management**: React Hooks
+- **Forms**: React Hook Form
+- **API**: RESTful with TypeScript types
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Directory Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                 # Next.js 13+ App Router
+├── components/         # Reusable UI components
+├── lib/               # Utility functions and configurations
+├── database/         # Database models and connections
+├── types/            # TypeScript type definitions
+├── styles/           # Global styles and Tailwind config
+└── scripts/          # Utility scripts
+```
+
+## 🔐 Security
+
+- JWT-based authentication
+- Role-based access control
+- Rate limiting
+- Input validation
+- XSS protection
+- CSRF protection
+- Secure password hashing
+
+## 🌐 Deployment
+
+The platform is designed to be deployed on various cloud providers:
+
+- **Vercel** (Recommended)
+- **AWS**
+- **Google Cloud**
+- **Azure**
+
+Detailed deployment guides are available in the [deployment documentation](docs/deployment.md).
+
+## 🧪 Testing
+
+```bash
+# Run unit tests
+bun test
+
+# Run integration tests
+bun test:integration
+
+# Run e2e tests
+bun test:e2e
+```
+
+## 📚 Documentation
+
+- [API Documentation](docs/api.md)
+- [Authentication Guide](docs/auth.md)
+- [Deployment Guide](docs/deployment.md)
+- [Development Guide](docs/development.md)
+- [Contributing Guide](CONTRIBUTING.md)
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Next.js Team](https://nextjs.org/)
+- [Vercel](https://vercel.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [OpenAI](https://openai.com/)
+
+## 📞 Support
+
+- Email: support@flextile.com
+- [Discord Community](https://discord.gg/flextile)
+- [Documentation](https://docs.flextile.com)
+
+---
+
+<div align="center">
+  Made with ❤️ by the Flextile Team
+</div>

@@ -68,7 +68,7 @@ export async function POST(request: NextRequest, { params }: Props) {
       // Email to admin
       sendEmail({
         to: data.adminEmail,
-        subject: "Your Institute Admin Account - flextile",
+        subject: "Your Institute Admin Account - Flextile",
         template: "INSTITUTE_ADMIN_CREDENTIALS",
         data: {
           name: data.adminName,
