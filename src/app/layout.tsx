@@ -6,6 +6,7 @@ import { SessionProvider } from "@/components/providers/session-provider";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth.config";
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "Fluxtile GPT",
@@ -29,6 +30,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <SpeedInsights />
             {children}
           </ThemeProvider>
         </SessionProvider>
@@ -37,3 +39,4 @@ export default async function RootLayout({
     </html>
   );
 }
+

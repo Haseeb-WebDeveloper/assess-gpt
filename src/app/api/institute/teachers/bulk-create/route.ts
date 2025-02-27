@@ -70,7 +70,7 @@ export async function POST(req: Request) {
             name: teacher.name,
             email: teacher.email,
             password: teacher.password,
-            loginUrl: `https://${institute?.subdomain}/fluxtile.com/auth/institute/teacher/login`,
+            loginUrl: `https://${institute?.subdomain}.fluxtile.com/auth/institute/teacher/login`,
           },
         });
 

@@ -1,5 +1,5 @@
-import InstituteTeacherLoginForm from "@/components/auth/institute/teacher/login-form";
+import TeacherLoginForm from "@/components/auth/teacher/login-form";
 
 export default function TeacherLoginPage() {
-  return <InstituteTeacherLoginForm />;
-}
+  return <TeacherLoginForm />;
+} 
