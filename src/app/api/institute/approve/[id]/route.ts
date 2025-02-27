@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/db";
 import { InstituteRequest } from "@/database/model/institute-request.model";
 import { Institute } from "@/database/model/institute.model";
@@ -6,12 +6,15 @@ import InstituteAdmin from "@/database/model/institute-admin.model";
 import { sendEmail } from "@/lib/mail";
 import bcrypt from "bcryptjs";
 
-export async function POST(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export async function POST(request: NextRequest, { params }: Props) {
   try {
-    const data = await req.json();
+    const data = await request.json();
     await connectToDatabase();
 
     // 1. Get the institute request
@@ -53,11 +56,11 @@ export async function POST(
       // Email to institute
       sendEmail({
         to: data.instituteEmail,
-        subject: "Your Institute Account is Ready - AssessGPT",
+        subject: "Your Institute Account is Ready - Flextile",
         template: "INSTITUTE_APPROVED",
         data: {
           instituteName: data.instituteName,
-          subdomain: `${data.subdomain}.assessgpt.com`,
+          subdomain: `${data.subdomain}.flextile.com`,
           adminEmail: data.adminEmail,
           adminPassword: data.adminPassword,
         },
@@ -65,14 +68,14 @@ export async function POST(
       // Email to admin
       sendEmail({
         to: data.adminEmail,
-        subject: "Your Institute Admin Account - AssessGPT",
+        subject: "Your Institute Admin Account - flextile",
         template: "INSTITUTE_ADMIN_CREDENTIALS",
         data: {
           name: data.adminName,
           instituteName: data.instituteName,
           email: data.adminEmail,
           password: data.adminPassword,
-          subdomain: `${data.subdomain}.assessgpt.com`,
+          subdomain: `${data.subdomain}.flextile.com`,
         },
       }),
     ]);

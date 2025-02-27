@@ -39,7 +39,7 @@ export const columns: ColumnDef<InstituteRequest>[] = [
     cell: ({ row }) => {
       return (
         <span className="font-mono text-sm">
-          {row.getValue("requestedSubdomain")}.assessgpt.com
+          {row.getValue("requestedSubdomain")}.flextile.com
         </span>
       );
     },
