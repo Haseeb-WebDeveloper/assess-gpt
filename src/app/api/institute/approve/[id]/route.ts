@@ -56,11 +56,11 @@ export async function POST(request: NextRequest, { params }: Props) {
       // Email to institute
       sendEmail({
         to: data.instituteEmail,
-        subject: "Your Institute Account is Ready - Flextile",
+        subject: "Your Institute Account is Ready - Fluxtile",
         template: "INSTITUTE_APPROVED",
         data: {
           instituteName: data.instituteName,
-          subdomain: `${data.subdomain}.flextile.com`,
+          subdomain: `${data.subdomain}.fluxtile.com`,
           adminEmail: data.adminEmail,
           adminPassword: data.adminPassword,
         },
@@ -68,14 +68,14 @@ export async function POST(request: NextRequest, { params }: Props) {
       // Email to admin
       sendEmail({
         to: data.adminEmail,
-        subject: "Your Institute Admin Account - Flextile",
+        subject: "Your Institute Admin Account - Fluxtile",
         template: "INSTITUTE_ADMIN_CREDENTIALS",
         data: {
           name: data.adminName,
           instituteName: data.instituteName,
           email: data.adminEmail,
           password: data.adminPassword,
-          subdomain: `${data.subdomain}.flextile.com`,
+          subdomain: `${data.subdomain}.fluxtile.com`,
         },
       }),
     ]);

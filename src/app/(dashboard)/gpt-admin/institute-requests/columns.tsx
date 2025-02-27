@@ -13,7 +13,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
-import { ApproveModal, InstituteApprovalData } from "@/components/dashboard/admin/institute-requests/approve-modal";
+import {
+  ApproveModal,
+  InstituteApprovalData,
+} from "@/components/dashboard/admin/institute-requests/approve-modal";
 import { toast } from "sonner";
 import { RejectModal } from "@/components/dashboard/admin/institute-requests/reject-modal";
 
@@ -39,7 +42,7 @@ export const columns: ColumnDef<InstituteRequest>[] = [
     cell: ({ row }) => {
       return (
         <span className="font-mono text-sm">
-          {row.getValue("requestedSubdomain")}.flextile.com
+          {row.getValue("requestedSubdomain")}.fluxtile.com
         </span>
       );
     },
@@ -174,4 +177,4 @@ export const columns: ColumnDef<InstituteRequest>[] = [
       );
     },
   },
-]; 
+];

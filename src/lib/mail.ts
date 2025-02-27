@@ -47,7 +47,7 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
 
   INSTITUTE_APPROVED: (data: any) => `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #2563eb;">Welcome to Flextile!</h2>
+      <h2 style="color: #2563eb;">Welcome to Fluxtile!</h2>
       <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
         <p>Your institute account has been approved and is ready to use.</p>
         
@@ -88,7 +88,7 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
         </p>
       </div>
       <div style="color: #64748b; font-size: 14px; margin-top: 20px;">
-        <p>Welcome to Flextile!</p>
+        <p>Welcome to Fluxtile!</p>
       </div>
     </div>
   `,

@@ -1,18 +1,19 @@
-# Flextile - AI-Powered Assessment Platform
+# Fluxtile - AI-Powered Assessment Platform
 
 <div align="center">
-  <img src="public/logo.png" alt="Flextile Logo" width="200"/>
+  <img src="public/logo.png" alt="Fluxtile Logo" width="200"/>
   <p>Transform education with AI-powered assessment tools</p>
 
-  [![Next.js](https://img.shields.io/badge/Next.js-15.1.7-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-  [![MongoDB](https://img.shields.io/badge/MongoDB-6.0-green?style=flat-square&logo=mongodb)](https://www.mongodb.com/)
-  [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-15.1.7-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-6.0-green?style=flat-square&logo=mongodb)](https://www.mongodb.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 </div>
 
 ## 🌟 Overview
 
-Flextile is a cutting-edge assessment platform that leverages artificial intelligence to revolutionize how educational institutions conduct and manage assessments. Our platform provides a comprehensive suite of tools for creating, administering, and evaluating assessments while ensuring fairness and accuracy.
+Fluxtile is a cutting-edge assessment platform that leverages artificial intelligence to revolutionize how educational institutions conduct and manage assessments. Our platform provides a comprehensive suite of tools for creating, administering, and evaluating assessments while ensuring fairness and accuracy.
 
 ### 🎯 Key Features
 
@@ -34,12 +35,14 @@ Flextile is a cutting-edge assessment platform that leverages artificial intelli
 ### Installation
 
 1. Clone the repository:
+
 ```bash
-git clone https://github.com/yourusername/flextile.git
-cd flextile
+git clone https://github.com/yourusername/fluxtile.git
+cd fluxtile
 ```
 
 2. Install dependencies:
+
 ```bash
 bun install
 # or
@@ -47,17 +50,21 @@ npm install
 ```
 
 3. Set up environment variables:
+
 ```bash
 cp .env.example .env
 ```
+
 Edit `.env` with your configuration.
 
 4. Create a platform admin:
+
 ```bash
 bun run create-admin
 ```
 
 5. Start the development server:
+
 ```bash
 bun run dev
 ```
@@ -149,12 +156,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- Email: support@flextile.com
-- [Discord Community](https://discord.gg/flextile)
-- [Documentation](https://docs.flextile.com)
+- Email: support@fluxtile.com
+- [Discord Community](https://discord.gg/fluxtile)
+- [Documentation](https://docs.fluxtile.com)
 
 ---
 
 <div align="center">
-  Made with ❤️ by the Flextile Team
+  Made with ❤️ by the Fluxtile Team
 </div>

@@ -7,8 +7,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth.config";
 
 export const metadata: Metadata = {
-  title: "Assess GPT",
-  description: "Assess GPT",
+  title: "Fluxtile GPT",
+  description: "Fluxtile GPT",
 };
 
 export default async function RootLayout({
