@@ -1,34 +1,22 @@
 import mongoose, { Schema } from 'mongoose';
+import { IBaseModel } from "./common/base.model";
 
-export interface InstituteTeacherInterface {
+export interface InstituteTeacherInterface extends IBaseModel {
   name: string;
   email: string;
   password: string;
-  bio?: string;
+  instituteId: mongoose.Types.ObjectId;
+  role: string;
+  subjects?: mongoose.Types.ObjectId[];
+  isActive: boolean;
+  lastLogin?: Date;
   profileImage?: string;
-  bannerImage?: string;
-  institute: typeof Schema.Types.ObjectId;
-  isVerified: boolean;
-  credits: number;
-  subjects: Array<typeof Schema.Types.ObjectId>; 
-  availability: 'Available' | 'Busy' | 'On Leave' | 'Offline';
-  notifications: Array<{
-    type: string;
-    message: string;
-    read: boolean;
-    createdAt: Date;
-  }>;
-  settings: {
-    emailNotifications: boolean;
-    autoGrading: boolean;
-  };
-  contact: {
-    country?: string;
+  bio?: string;
+  department?: string;
+  contact?: {
     phone?: string;
     address?: string;
   };
-  isDeleted: boolean;
-  isActive: boolean;
 }
 
 // Teacher Schema
@@ -57,6 +45,7 @@ const TeacherSchema = new Schema<InstituteTeacherInterface>({
   password: {
     type: String,
     required: true,
+    select: false,
     validate: {
       validator: function (v: string) {
         return v.length >= 6;
@@ -81,10 +70,15 @@ const TeacherSchema = new Schema<InstituteTeacherInterface>({
     type: String,
     default: 'https://via.placeholder.com/150',
   },
-  institute: {
+  instituteId: {
     type: Schema.Types.ObjectId,
     ref: 'Institute',
     required: true,
+  },
+  role: {
+    type: String,
+    enum: ["teacher", "head_teacher"],
+    default: "teacher",
   },
   isVerified: {
     type: Boolean,
@@ -98,11 +92,9 @@ const TeacherSchema = new Schema<InstituteTeacherInterface>({
   subjects: {
     type: [Schema.Types.ObjectId],
     ref: 'Subject',
-    required: true,
   },
   availability: {
     type: String,
-    required: true,
     enum: ['Available', 'Busy', 'On Leave', 'Offline'],
     default: 'Available',
   },
@@ -137,9 +129,14 @@ const TeacherSchema = new Schema<InstituteTeacherInterface>({
   },
   isDeleted: { type: Boolean, required: true, default: false },
   isActive: { type: Boolean, required: true, default: true },
+  lastLogin: Date,
+  department: String,
+}, {
+  timestamps: true,
 });
 
 // Indexes (Ensure these indexes match actual schema fields)
 TeacherSchema.index({ email: 1, isVerified: 1 });
+TeacherSchema.index({ instituteId: 1 });
 
 export const InstituteTeacher = mongoose.models.InstituteTeacher || mongoose.model<InstituteTeacherInterface>('InstituteTeacher', TeacherSchema);

@@ -9,7 +9,7 @@ export interface IndividualTeacherInterface {
   bannerImage?: string;
   organization: string;
   isVerified: boolean;
-  credits: number;
+  creditsUsed: number;
   subjects: Array<typeof Schema.Types.ObjectId>; 
   availability: 'Available' | 'Busy' | 'On Leave' | 'Offline';
   notifications: Array<{
@@ -96,10 +96,10 @@ const TeacherSchema = new Schema<IndividualTeacherInterface>({
     required: true,
     default: false,
   },
-  credits: {
+  creditsUsed: {
     type: Number,
     required: true,
-    default: 100,
+    default: 0,
   },
   subjects: {
     type: [Schema.Types.ObjectId],

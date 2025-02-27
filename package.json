@@ -38,6 +38,7 @@
     "react-icons": "^5.5.0",
     "shadcn": "^2.4.0-canary.9",
     "sonner": "^2.0.1",
+    "swr": "^2.3.2",
     "table": "tanstack/react-table",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",

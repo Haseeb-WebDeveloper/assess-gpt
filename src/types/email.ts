@@ -3,7 +3,8 @@ export type EmailTemplate =
   | "WELCOME_INSTITUTE"
   | "INSTITUTE_APPROVED"
   | "INSTITUTE_REJECTED"
-  | "INSTITUTE_ADMIN_CREDENTIALS";
+  | "INSTITUTE_ADMIN_CREDENTIALS"
+  | "INSTITUTE_TEACHER_WELCOME";
 
 export interface EmailData {
   to: string;

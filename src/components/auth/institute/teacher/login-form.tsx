@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 
-export default function TeacherLoginForm() {
+export default function InstituteTeacherLoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);

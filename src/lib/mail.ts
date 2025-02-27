@@ -112,6 +112,28 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
       </div>
     </div>
   `,
+
+  INSTITUTE_TEACHER_WELCOME: (data: any) => `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #2563eb;">Welcome to Fluxtile!</h2>
+      <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <p>Hello ${data.name},</p>
+        <p>Your teacher account has been created successfully.</p>
+        
+        <h3>Account Details</h3>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Password:</strong> ${data.password}</p>
+        <p><strong>Login URL:</strong> <a href="${data.loginUrl}">${data.loginUrl}</a></p>
+        
+        <p style="margin-top: 20px; color: #dc2626;">
+          Please change your password after your first login for security.
+        </p>
+      </div>
+      <div style="color: #64748b; font-size: 14px; margin-top: 20px;">
+        <p>Welcome to Fluxtile! We're excited to have you on board.</p>
+      </div>
+    </div>
+  `,
 };
 
 // Email configuration
@@ -159,4 +181,5 @@ export type EmailTemplate =
   | "WELCOME_INSTITUTE"
   | "INSTITUTE_APPROVED"
   | "INSTITUTE_ADMIN_CREDENTIALS"
-  | "INSTITUTE_REJECTED"; 
+  | "INSTITUTE_REJECTED"
+  | "INSTITUTE_TEACHER_WELCOME"; 
