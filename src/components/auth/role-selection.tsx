@@ -18,15 +18,12 @@ const RoleSelection = () => {
         >
           <h1 className="text-3xl font-bold mb-4">Choose Your Role</h1>
           <p className="text-muted-foreground">
-            Select how you would like to use AssessGPT
+            Select how you would like to use Fluxtile
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="relative group"
-          >
+          <motion.div whileHover={{ scale: 1.02 }} className="relative group">
             <CustomButton
               variant="outline"
               className="w-full h-auto p-6 flex flex-col items-center gap-4 border-2"
@@ -42,10 +39,7 @@ const RoleSelection = () => {
             </CustomButton>
           </motion.div>
 
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="relative group"
-          >
+          <motion.div whileHover={{ scale: 1.02 }} className="relative group">
             <CustomButton
               variant="outline"
               className="w-full h-auto p-6 flex flex-col items-center gap-4 border-2"
@@ -66,4 +60,4 @@ const RoleSelection = () => {
   );
 };
 
-export default RoleSelection; 
+export default RoleSelection;

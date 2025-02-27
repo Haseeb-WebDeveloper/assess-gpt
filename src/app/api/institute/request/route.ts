@@ -41,7 +41,7 @@ export async function POST(req: Request) {
       // Send confirmation email to institute
       await sendEmail({
         to: data.email,
-        subject: "We've Received Your Request - AssessGPT",
+        subject: "We've Received Your Request - Fluxtile",
         template: "WELCOME_INSTITUTE",
         data: {
           contactName: data.contactName,

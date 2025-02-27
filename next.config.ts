@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   //     {
   //       source: "/:path*",
   //       destination: "/subdomain/:path*",
-  //       // has: [{ type: "host", value: "*.assessgpt.com" }],  // for subdomain after deploy
+  //       // has: [{ type: "host", value: "*.fluxtile.com" }],  // for subdomain after deploy
   //       has: [{ type: "host", value: "localhost:3000" }],  // for subdomain before deploy
   //       // permanent: true,
   //     },

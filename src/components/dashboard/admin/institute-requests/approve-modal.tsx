@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { CustomButton } from "@/components/ui/custom-button";
 import { Loader2 } from "lucide-react";
@@ -24,7 +29,12 @@ export interface InstituteApprovalData {
   adminPassword: string;
 }
 
-export function ApproveModal({ isOpen, onClose, request, onApprove }: ApproveModalProps) {
+export function ApproveModal({
+  isOpen,
+  onClose,
+  request,
+  onApprove,
+}: ApproveModalProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -86,7 +96,7 @@ export function ApproveModal({ isOpen, onClose, request, onApprove }: ApproveMod
                 className="rounded-r-none"
               />
               <span className="px-3 py-2 bg-muted border border-l-0 border-input rounded-r-md">
-                .assessgpt.com
+                .fluxtile.com
               </span>
             </div>
           </div>
@@ -139,11 +149,7 @@ export function ApproveModal({ isOpen, onClose, request, onApprove }: ApproveMod
             >
               Cancel
             </CustomButton>
-            <CustomButton
-              type="submit"
-              variant="gradient"
-              disabled={isLoading}
-            >
+            <CustomButton type="submit" variant="gradient" disabled={isLoading}>
               {isLoading ? (
                 <>
                   <Loader2 className="animate-spin" />
@@ -158,4 +164,4 @@ export function ApproveModal({ isOpen, onClose, request, onApprove }: ApproveMod
       </DialogContent>
     </Dialog>
   );
-} 
+}

@@ -13,14 +13,14 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
         <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Phone:</strong> ${data.phone}</p>
         <p><strong>Location:</strong> ${data.location}</p>
-        <p><strong>Requested Subdomain:</strong> ${data.requestedSubdomain}.assessgpt.com</p>
+        <p><strong>Requested Subdomain:</strong> ${data.requestedSubdomain}.fluxtile.com</p>
         <p><strong>Expected Students:</strong> ${data.expectedStudents}</p>
         
         <h3>Additional Information</h3>
         <p>${data.description || "No additional information provided."}</p>
       </div>
       <div style="color: #64748b; font-size: 14px; margin-top: 20px;">
-        <p>This is an automated message from AssessGPT.</p>
+        <p>This is an automated message from Fluxtile.</p>
       </div>
     </div>
   `,
@@ -40,7 +40,7 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
         <p>If you have any questions in the meantime, feel free to reach out to our support team.</p>
       </div>
       <div style="color: #64748b; font-size: 14px; margin-top: 20px;">
-        <p>Best regards,<br>The AssessGPT Team</p>
+        <p>Best regards,<br>The Fluxtile Team</p>
       </div>
     </div>
   `,
@@ -98,7 +98,7 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
       <h2 style="color: #2563eb;">Institute Request Update</h2>
       <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
         <p>Dear ${data.contactName},</p>
-        <p>Thank you for your interest in AssessGPT. After careful review of your request for ${data.instituteName}, we regret to inform you that we are unable to approve your institute request at this time.</p>
+        <p>Thank you for your interest in Fluxtile. After careful review of your request for ${data.instituteName}, we regret to inform you that we are unable to approve your institute request at this time.</p>
         
         <h3>Reason for Rejection</h3>
         <p>${data.reason}</p>
@@ -108,7 +108,7 @@ const templates: Record<EmailTemplate, (data: any) => string> = {
         </p>
       </div>
       <div style="color: #64748b; font-size: 14px; margin-top: 20px;">
-        <p>Best regards,<br>The AssessGPT Team</p>
+        <p>Best regards,<br>The Fluxtile Team</p>
       </div>
     </div>
   `,
@@ -138,7 +138,7 @@ export async function sendEmail({
     const transporter = createTransporter();
     
     const mailOptions = {
-      from: `"AssessGPT" <${process.env.SENDER_EMAIL}>`,
+      from: `"Fluxtile" <${process.env.SENDER_EMAIL}>`,
       to,
       subject,
       html: templates[template](data),

@@ -56,7 +56,7 @@ export default function TeacherSignupForm() {
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold mb-2">Create Teacher Account</h1>
           <p className="text-muted-foreground">
-            Start your journey with AssessGPT
+            Start your journey with Fluxtile
           </p>
         </div>
 
@@ -94,7 +94,10 @@ export default function TeacherSignupForm() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium mb-2"
+            >
               Password
             </label>
             <Input
@@ -107,7 +110,10 @@ export default function TeacherSignupForm() {
           </div>
 
           <div>
-            <label htmlFor="organization" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="organization"
+              className="block text-sm font-medium mb-2"
+            >
               Organization
             </label>
             <Input
@@ -148,4 +154,4 @@ export default function TeacherSignupForm() {
       </motion.div>
     </div>
   );
-} 
+}

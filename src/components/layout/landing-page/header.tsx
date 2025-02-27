@@ -53,7 +53,7 @@ const Header = () => {
               animate={{ opacity: 1, x: 0 }}
               className="text-xl font-bold bg-gradient-to-r from-primary via-blue-600 to-indigo-600 bg-clip-text text-transparent"
             >
-              AssessGPT
+              Fluxtile
             </motion.span>
           </Link>
 
@@ -78,14 +78,14 @@ const Header = () => {
                 variant="outline"
                 size="sm"
                 icon={<LogIn size={16} />}
-            >
-              Log in
-            </CustomButton>
+              >
+                Log in
+              </CustomButton>
             </Link>
             <Link href="/auth">
-            <CustomButton variant="gradient" size="sm">
-              Get Started
-            </CustomButton>
+              <CustomButton variant="gradient" size="sm">
+                Get Started
+              </CustomButton>
             </Link>
           </div>
 

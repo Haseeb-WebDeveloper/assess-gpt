@@ -31,7 +31,7 @@ export async function POST(request: NextRequest, { params }: Props) {
     // 3. Send rejection email
     await sendEmail({
       to: instituteRequest.contactEmail,
-      subject: "Update on Your Institute Request - AssessGPT",
+      subject: "Update on Your Institute Request - Fluxtile",
       template: "INSTITUTE_REJECTED",
       data: {
         instituteName: instituteRequest.instituteName,

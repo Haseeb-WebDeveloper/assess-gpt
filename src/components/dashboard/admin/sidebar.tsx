@@ -62,7 +62,7 @@ export default function AdminSidebar() {
       <div className="h-16 flex items-center px-6">
         <Link href="/gpt-admin/dashboard" className="flex items-center gap-2">
           <Shield className="h-7 w-7 text-primary" />
-          <span className="font-semibold text-xl">AssessGPT</span>
+          <span className="font-semibold text-xl">Fluxtile</span>
         </Link>
       </div>
 

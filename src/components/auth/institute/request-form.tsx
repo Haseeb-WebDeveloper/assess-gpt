@@ -61,16 +61,19 @@ export default function InstituteRequestForm() {
           <Building2 className="w-12 h-12 mx-auto mb-4 text-primary" />
           <h1 className="text-2xl font-bold mb-2">Request Institute Access</h1>
           <p className="text-muted-foreground">
-            Fill out this form to request an institute-wide account for your organization
+            Fill out this form to request an institute-wide account for your
+            organization
           </p>
         </div>
 
         {success ? (
           <div className="bg-green-500/10 text-green-500 p-6 rounded-lg text-center">
-            <h3 className="font-semibold mb-2">Request Submitted Successfully!</h3>
+            <h3 className="font-semibold mb-2">
+              Request Submitted Successfully!
+            </h3>
             <p>
-              Thank you for your interest. Our team will review your request and contact
-              you via email with further instructions.
+              Thank you for your interest. Our team will review your request and
+              contact you via email with further instructions.
             </p>
           </div>
         ) : (
@@ -84,7 +87,10 @@ export default function InstituteRequestForm() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="instituteName" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="instituteName"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Institute Name
                   </label>
                   <Input
@@ -96,7 +102,10 @@ export default function InstituteRequestForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="contactName" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="contactName"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Contact Person Name
                   </label>
                   <Input
@@ -110,7 +119,10 @@ export default function InstituteRequestForm() {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Email
                   </label>
                   <Input
@@ -123,7 +135,10 @@ export default function InstituteRequestForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Phone Number
                   </label>
                   <Input
@@ -137,7 +152,10 @@ export default function InstituteRequestForm() {
               </div>
 
               <div>
-                <label htmlFor="location" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="location"
+                  className="block text-sm font-medium mb-2"
+                >
                   Location
                 </label>
                 <Input
@@ -149,7 +167,10 @@ export default function InstituteRequestForm() {
               </div>
 
               <div>
-                <label htmlFor="requestedSubdomain" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="requestedSubdomain"
+                  className="block text-sm font-medium mb-2"
+                >
                   Requested Subdomain
                 </label>
                 <div className="flex items-center">
@@ -161,13 +182,16 @@ export default function InstituteRequestForm() {
                     className="rounded-r-none"
                   />
                   <span className="px-3 py-2 bg-muted border border-l-0 border-input rounded-r-md">
-                    .assessgpt.com
+                    .fluxtile.com
                   </span>
                 </div>
               </div>
 
               <div>
-                <label htmlFor="expectedStudents" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="expectedStudents"
+                  className="block text-sm font-medium mb-2"
+                >
                   Expected Number of Students
                 </label>
                 <Input
@@ -180,13 +204,16 @@ export default function InstituteRequestForm() {
               </div>
 
               <div>
-                <label htmlFor="description" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="description"
+                  className="block text-sm font-medium mb-2"
+                >
                   Additional Information
                 </label>
                 <Textarea
                   id="description"
                   name="description"
-                  placeholder="Tell us more about your institution and how you plan to use AssessGPT..."
+                  placeholder="Tell us more about your institution and how you plan to use Fluxtile..."
                   className="h-32"
                 />
               </div>
@@ -212,4 +239,4 @@ export default function InstituteRequestForm() {
       </motion.div>
     </div>
   );
-} 
+}
